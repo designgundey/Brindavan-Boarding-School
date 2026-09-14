@@ -42,8 +42,11 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 .hero-card{grid-column:1;grid-row:1;background:#000881;color:#fff;border-radius:32px 32px 0 32px;padding:48px 44px 40px;display:flex;flex-direction:column}
 .hero-card h1{color:#fff}
 .hero-card h1 em{color:var(--orange);font-style:normal}
-.hero-card .intro{color:#c9d3ff;margin-top:20px;max-width:440px;font-size:16px}
-.pill-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-card .intro{color:#c9d3ff;margin-top:20px;max-width:440px;font-size:16px;font-weight:400}
+.pill-marquee{margin-top:28px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.pill-track{display:flex;width:max-content;gap:12px;animation:pill-scroll 24s linear infinite}
+@keyframes pill-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.pill-track{animation:none}}
 .pill-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:999px;padding:9px 18px;font-size:13px;color:#fff}
 .pill-badge i{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(248,212,42,.2);display:inline-block;flex-shrink:0}
 .pill-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
