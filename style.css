@@ -54,7 +54,7 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 .pill-btn:hover{background:#ffd966;border-color:#ffd966}
 .pill-btn-outline{background:transparent;color:#fff;border-color:var(--orange)}
 .pill-btn-outline:hover{background:var(--orange);color:#000881}
-.pill-btn .swoosh-arrow{width:20px;height:20px}
+.pill-btn .swoosh-arrow{width:22px;height:16px}
 .hero-strip{grid-column:1;grid-row:2;display:flex;gap:40px;padding-top:22px;border-top:1px solid var(--line)}
 .hero-strip span{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
 .hero-strip strong{font-size:22px;font-weight:650;color:var(--ink)}
