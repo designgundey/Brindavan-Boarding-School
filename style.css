@@ -6,7 +6,7 @@
 .stat-count{white-space:nowrap;font-variant-numeric:tabular-nums}.section{padding-top:98px;padding-bottom:98px}.about{display:grid;grid-template-columns:1fr 1fr;gap:10vw}
 #about{background:#fff}
 #about .about-text{max-width:none}
-#about .lead{font-size:clamp(56px,6.4vw,96px);line-height:1.1;letter-spacing:-.03em;max-width:100%;color:var(--blue);font-weight:650}
+#about .lead{font-size:clamp(40px,5vw,76px);line-height:1.15;letter-spacing:-.03em;max-width:100%;white-space:normal;word-break:keep-all;color:var(--blue);font-weight:650}
 #about .lead mark{background:var(--orange);color:var(--blue);padding:0 6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 #about .about-copy>p:not(.lead){max-width:640px}
 #about .values{max-width:640px}
