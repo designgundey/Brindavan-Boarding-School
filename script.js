@@ -44,3 +44,30 @@ if (heroSlides.length > 1) {
     }
   }, 4000);
 }
+
+const prospectusModal = document.getElementById('prospectus-modal');
+if (prospectusModal) {
+  const openTriggers = document.querySelectorAll('[data-open-prospectus]');
+  const closeTriggers = prospectusModal.querySelectorAll('[data-close-prospectus]');
+  const form = document.getElementById('prospectus-form');
+  const openModal = () => {
+    prospectusModal.hidden = false;
+    const firstInput = form.querySelector('input');
+    if (firstInput) firstInput.focus();
+  };
+  const closeModal = () => { prospectusModal.hidden = true; };
+  openTriggers.forEach(el => el.addEventListener('click', e => { e.preventDefault(); openModal(); }));
+  closeTriggers.forEach(el => el.addEventListener('click', closeModal));
+  prospectusModal.addEventListener('click', e => { if (e.target === prospectusModal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !prospectusModal.hidden) closeModal(); });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.elements.name.value.trim();
+    const whatsapp = form.elements.whatsapp.value.trim();
+    const message = `Hi, I would like to request the school prospectus.\nName: ${name}\nMy WhatsApp number: ${whatsapp}`;
+    const url = `https://wa.me/910000000000?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener');
+    form.reset();
+    closeModal();
+  });
+}
