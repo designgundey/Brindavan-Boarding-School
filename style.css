@@ -38,6 +38,25 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 .award-pill svg{width:16px;height:16px;color:var(--blue);flex-shrink:0}
 @keyframes award-scroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.award-track{animation:none}}
+.hero-showcase{grid-template-columns:0.95fr 1.2fr;grid-template-rows:auto auto;align-items:stretch;gap:24px 4vw;padding-top:50px;padding-bottom:50px}
+.hero-card{grid-column:1;grid-row:1;background:#0b1a3d;color:#fff;border-radius:32px;padding:48px 44px 40px;display:flex;flex-direction:column}
+.hero-card h1{color:#fff}
+.hero-card h1 em{color:var(--orange);font-style:normal}
+.hero-card .intro{color:#c9d3ff;margin-top:20px;max-width:440px;font-size:16px}
+.pill-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pill-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 16px;font-size:13px;color:#fff}
+.pill-badge i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;flex-shrink:0}
+.pill-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.pill-btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#0b1a3d;font-weight:700;font-size:17px;padding:16px 26px;border-radius:999px;border:2px solid var(--orange);transition:background .2s,border-color .2s}
+.pill-btn:hover{background:#ffd966;border-color:#ffd966}
+.pill-btn-outline{background:transparent;color:var(--orange)}
+.pill-btn-outline:hover{background:var(--orange);color:#0b1a3d}
+.hero-strip{grid-column:1;grid-row:2;display:flex;gap:40px;padding-top:22px;border-top:1px solid var(--line)}
+.hero-strip span{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+.hero-strip strong{font-size:22px;font-weight:650;color:var(--ink)}
+.hero-showcase .hero-visual{grid-column:2;grid-row:1/3;align-self:stretch;height:auto;min-height:0;margin:0;border-radius:32px}
+@media(max-width:1100px){.hero-strip strong{font-size:19px}.hero-strip{gap:28px}}
+@media(max-width:800px){.hero-showcase{grid-template-columns:1fr;grid-template-rows:auto auto auto}.hero-card{grid-column:1;grid-row:1;padding:36px 28px 32px}.hero-strip{grid-column:1;grid-row:2}.hero-showcase .hero-visual{grid-column:1;grid-row:3;height:320px;min-height:0;border-radius:24px}}
 .hero-illustrated{position:relative;padding:0;min-height:640px;display:flex;align-items:center;overflow:hidden}
 .hero-illustration{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center;z-index:0}
 .hero-illustrated-copy{position:relative;z-index:1;max-width:560px;padding:80px max(5.5vw,24px)}
