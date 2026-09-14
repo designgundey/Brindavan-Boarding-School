@@ -38,7 +38,7 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 .award-pill svg{width:16px;height:16px;color:var(--blue);flex-shrink:0}
 @keyframes award-scroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.award-track{animation:none}}
-.hero-showcase{grid-template-columns:1.15fr 1fr;grid-template-rows:auto auto;align-items:stretch;gap:24px 4vw;padding-top:50px;padding-bottom:50px}
+.hero-showcase{grid-template-columns:1.15fr 1fr;grid-template-rows:auto auto;align-items:stretch;gap:24px 2vw;padding-top:50px;padding-bottom:50px}
 .hero-card{grid-column:1;grid-row:1;background:#000881;color:#fff;border-radius:32px 32px 0 32px;padding:48px 44px 40px;display:flex;flex-direction:column}
 .hero-card h1{color:#fff}
 .hero-card h1 em{color:var(--orange);font-style:normal}
