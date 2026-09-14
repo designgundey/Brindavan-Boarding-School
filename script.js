@@ -31,11 +31,16 @@ if (countEls.length) {
 }
 
 const heroSlides = document.querySelectorAll('.hero-visual .slide');
+const heroCaption = document.querySelector('.hero-caption');
 if (heroSlides.length > 1) {
   let current = 0;
   setInterval(() => {
     heroSlides[current].classList.remove('active');
     current = (current + 1) % heroSlides.length;
-    heroSlides[current].classList.add('active');
+    const next = heroSlides[current];
+    next.classList.add('active');
+    if (heroCaption && next.dataset.line1) {
+      heroCaption.innerHTML = `${next.dataset.line1}<br><strong>${next.dataset.line2}</strong>`;
+    }
   }, 4000);
 }
