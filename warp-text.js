@@ -117,10 +117,10 @@ const measureLine = (ctx, line, letterSpacing) => {
   return textWidth + Math.max(0, chars.length - 1) * letterSpacing;
 };
 
-const drawLine = (ctx, line, x, y, letterSpacing, highlight) => {
+const drawLine = (ctx, line, x, y, letterSpacing, highlight, align = 'center') => {
   const chars = Array.from(line);
   const lineWidth = measureLine(ctx, line, letterSpacing);
-  let cursor = x - lineWidth / 2;
+  let cursor = align === 'left' ? x : x - lineWidth / 2;
 
   if (highlight) {
     const before = line.slice(0, line.indexOf(highlight));
@@ -131,7 +131,7 @@ const drawLine = (ctx, line, x, y, letterSpacing, highlight) => {
     const padX = padY * 1.1;
     const boxH = ((metrics.actualBoundingBoxAscent || 0) + (metrics.actualBoundingBoxDescent || 0)) + padY * 2;
     ctx.save();
-    ctx.fillStyle = '#f5c518';
+    ctx.fillStyle = '#fdeeb0';
     ctx.fillRect(cursor + beforeWidth - padX, y - boxH / 2, highlightWidth + padX * 2, boxH);
     ctx.restore();
   }
@@ -204,9 +204,10 @@ const buildTextCanvas = ({ container, width, height, dpr, props }) => {
   }
 
   const startY = height / 2 - (lineHeight * (lines.length - 1)) / 2;
+  const startX = props.align === 'left' ? width * 0.01 : width / 2;
   lines.forEach((line, index) => {
     const highlight = props.highlightLine === index ? props.highlightText : null;
-    drawLine(ctx, line, width / 2, startY + index * lineHeight, letterSpacing, highlight);
+    drawLine(ctx, line, startX, startY + index * lineHeight, letterSpacing, highlight, props.align);
   });
 
   return canvas;
@@ -243,6 +244,7 @@ export function initWarpText(container, userProps = {}) {
     lineHeight: 0.9,
     highlightLine: -1,
     highlightText: '',
+    align: 'center',
     ...userProps
   };
 
@@ -496,6 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
     refraction: 0.014,
     ripple: true,
     highlightLine: 2,
-    highlightText: 'what they learn.'
+    highlightText: 'what they learn.',
+    align: 'left'
   });
 });
