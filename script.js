@@ -4,3 +4,38 @@ menu.addEventListener('click', () => {const open = menu.getAttribute('aria-expan
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='Menu ☰';}));
 document.addEventListener('keydown', e => {if(e.key==='Escape' && nav.classList.contains('open')){menu.click();menu.focus();}});
 document.getElementById('year').textContent = new Date().getFullYear();
+
+const countEls = document.querySelectorAll('.count-up');
+if (countEls.length) {
+  const animateCount = el => {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1400;
+    const start = performance.now();
+    const step = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  countEls.forEach(el => observer.observe(el));
+}
+
+const heroSlides = document.querySelectorAll('.hero-visual .slide');
+if (heroSlides.length > 1) {
+  let current = 0;
+  setInterval(() => {
+    heroSlides[current].classList.remove('active');
+    current = (current + 1) % heroSlides.length;
+    heroSlides[current].classList.add('active');
+  }, 4000);
+}
