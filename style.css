@@ -6,7 +6,7 @@
 .stat-count{white-space:nowrap;font-variant-numeric:tabular-nums}.section{padding-top:98px;padding-bottom:98px}.about{display:grid;grid-template-columns:1fr 1fr;gap:10vw}
 #about{background:#fff}
 #about .about-text{max-width:none}
-#about .lead{font-size:clamp(28px,3.2vw,48px);line-height:1.2;letter-spacing:-.02em;max-width:100%}
+#about .lead{font-size:clamp(56px,6.4vw,96px);line-height:1.1;letter-spacing:-.03em;max-width:100%}
 #about .about-copy>p:not(.lead){max-width:640px}
 #about .values{max-width:640px}
 #explore-school{padding-left:0;padding-right:0}
