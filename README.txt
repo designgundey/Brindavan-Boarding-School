@@ -1,4 +1,4 @@
-Brindaban Boarding School website
+Brindavan Boarding School website
 
 Includes editable HTML, CSS, JavaScript and image assets. No build or dependencies required.
 
