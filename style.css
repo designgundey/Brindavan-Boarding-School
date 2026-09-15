@@ -47,7 +47,7 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 .award-pill svg{width:16px;height:16px;color:var(--blue);flex-shrink:0}
 @keyframes award-scroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.award-track{animation:none}}
-.hero-showcase{grid-template-columns:1fr 1.15fr;grid-template-rows:auto auto;align-items:stretch;gap:24px 2vw;padding-top:50px;padding-bottom:50px}
+.hero-showcase{grid-template-columns:1fr 1.15fr;grid-template-rows:auto auto;align-items:stretch;gap:14px;padding-top:50px;padding-bottom:50px}
 .hero-card{grid-column:1;grid-row:1;min-width:0;background:#000881;color:#fff;border-radius:32px 32px 0 32px;padding:48px 44px 40px;display:flex;flex-direction:column}
 .hero-card h1{color:#fff}
 .hero-card h1 em{color:var(--orange);font-style:normal}
@@ -70,7 +70,7 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 .hero-strip strong{font-size:22px;font-weight:650;color:var(--ink);line-height:1.4}
 .hero-showcase .hero-visual{grid-column:2;grid-row:1/3;align-self:stretch;height:auto;min-height:0;margin:0;border-radius:32px 32px 32px 0}
 @media(max-width:1100px){.hero-strip strong{font-size:19px}.hero-strip{gap:28px}}
-@media(max-width:800px){.hero-showcase{grid-template-columns:1fr;grid-template-rows:auto auto auto}.hero-card{grid-column:1;grid-row:1;padding:36px 28px 32px}.hero-strip{grid-column:1;grid-row:2}.hero-showcase .hero-visual{grid-column:1;grid-row:3;height:320px;min-height:0;border-radius:32px 32px 32px 0}}
+@media(max-width:800px){.hero-showcase{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:10px}.hero-card{grid-column:1;grid-row:1;padding:36px 28px 32px}.hero-strip{grid-column:1;grid-row:2}.hero-showcase .hero-visual{grid-column:1;grid-row:3;height:320px;min-height:0;border-radius:32px 32px 32px 0}}
 .dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .dept-card{background:white;border:1px solid var(--line);border-left:4px solid var(--blue);padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px}
 .dept-card.dept-c2{border-left-color:var(--orange)}
