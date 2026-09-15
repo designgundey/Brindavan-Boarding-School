@@ -30,7 +30,40 @@ if (countEls.length) {
   countEls.forEach(el => observer.observe(el));
 }
 
-const heroSlides = document.querySelectorAll('.hero-visual .slide');
+const valueCards = document.querySelectorAll('.value-card');
+if (valueCards.length) {
+  valueCards.forEach(card => card.addEventListener('pointermove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  }));
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          revealObserver.unobserve(entry.target);
+          setTimeout(() => entry.target.style.removeProperty('--delay'), 1200);
+        }
+      });
+    }, { threshold: 0.2 });
+    valueCards.forEach((card, i) => {
+      card.style.setProperty('--delay', `${i * 0.12}s`);
+      revealObserver.observe(card);
+    });
+  }
+}
+
+document.querySelectorAll('.faq').forEach(faq => {
+  const items = faq.querySelectorAll('details');
+  items.forEach(item => item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    items.forEach(other => { if (other !== item) other.open = false; });
+  }));
+});
+
+const heroSlides =document.querySelectorAll('.hero-visual .slide');
 const heroCaption = document.querySelector('.hero-caption');
 if (heroSlides.length > 1) {
   let current = 0;

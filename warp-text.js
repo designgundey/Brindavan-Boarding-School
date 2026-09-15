@@ -99,12 +99,12 @@ void main() {
   vec2 split = splitDir * uRefraction * 0.16 * (0.35 + lens * 1.65);
 
   vec4 base = sampleText(displaced);
-  float r = sampleText(displaced + split).r;
-  float g = base.g;
-  float b = sampleText(displaced - split).b;
-  float a = max(max(sampleText(displaced + split).a, base.a), sampleText(displaced - split).a);
+  float fringe = max(sampleText(displaced + split).a, sampleText(displaced - split).a);
+  float a = max(base.a, fringe);
 
-  vec3 color = vec3(r, g, b) + lens * base.a * 0.055;
+  // Fill the split fringe with the accent yellow instead of mixing RGB channels (which went black)
+  vec3 accent = vec3(0.961, 0.773, 0.098);
+  vec3 color = mix(accent, base.rgb, base.a / max(a, 0.0001));
   fragColor = vec4(color, a);
 }
 `;
