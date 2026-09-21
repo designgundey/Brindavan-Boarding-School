@@ -5,6 +5,14 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {nav.cl
 document.addEventListener('keydown', e => {if(e.key==='Escape' && nav.classList.contains('open')){menu.click();menu.focus();}});
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Give the persistent navigation a clear, quiet state once the page moves.
+const siteHeader = document.querySelector('header');
+const updateHeaderState = () => {
+  if (siteHeader) siteHeader.classList.toggle('is-scrolled', window.scrollY > 12);
+};
+updateHeaderState();
+window.addEventListener('scroll', updateHeaderState, { passive: true });
+
 const countEls = document.querySelectorAll('.count-up');
 if (countEls.length) {
   const animateCount = el => {
