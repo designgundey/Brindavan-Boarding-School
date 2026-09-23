@@ -58,8 +58,8 @@ footer:before{content:'';position:absolute;inset:0;background:url('/footer-photo
 @media(prefers-reduced-motion:reduce){.pill-track{animation:none}}
 .pill-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:999px;padding:9px 18px;font-size:13px;color:#fff}
 .pill-badge i{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(248,212,42,.2);display:inline-block;flex-shrink:0}
-.pill-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}
-.pill-btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#000881;font-weight:700;font-size:17px;padding:16px 26px;border-radius:16px;border:3px solid var(--orange);transition:background .2s,border-color .2s}
+.pill-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}.pill-actions .pill-btn{flex:1 1 220px;justify-content:space-between}
+.pill-btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#000881;font-weight:700;font-size:clamp(14px,1.15vw,17px);white-space:nowrap;padding:clamp(13px,1.1vw,16px) clamp(18px,1.8vw,26px);border-radius:16px;border:3px solid var(--orange);transition:background .2s,border-color .2s}
 .pill-btn:hover{background:#ffd966;border-color:#ffd966}
 .pill-btn-outline{background:transparent;color:#fff;border-color:var(--orange)}
 .pill-btn-outline:hover{background:var(--orange);color:#000881}
@@ -129,3 +129,88 @@ nav>a:not(.button):after{content:'';position:absolute;right:0;bottom:-7px;left:0
 nav>a:not(.button):hover:after,nav>a:not(.button):focus-visible:after{transform:scaleX(1);transform-origin:left}
 .hero-visual.is-paused .slide{transition-duration:0s}
 @media(max-width:1150px){nav>a:not(.button):after{display:none}header.is-scrolled{box-shadow:0 8px 22px rgba(20,32,57,.07)}}
+.ph-badge{display:inline-flex;align-items:center;gap:8px;margin:0 0 22px;padding:7px 15px;border:1px dashed var(--blue);border-radius:999px;background:var(--pale);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--blue)}
+.ph-badge:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.journey-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,1.6vw,26px);counter-reset:none}
+.journey-steps li{position:relative;padding-top:26px;border-top:2px solid var(--line);transition:border-color .35s}
+.journey-steps li:hover{border-top-color:var(--blue)}
+.journey-num{display:block;font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--blue);margin-bottom:14px}
+.journey-steps h3{font-size:var(--h3);margin:0 0 10px;color:var(--ink)}
+.journey-steps p{margin:0;font-size:var(--body-sm);line-height:1.7;color:var(--muted);max-width:34ch}
+.journey-foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:clamp(32px,3.4vw,52px)}
+.outcome-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,1.6vw,26px)}
+.outcome-grid li{padding:26px 20px 0 0;border-top:1px solid var(--line)}
+.outcome-grid strong{display:block;font-family:Manrope,Arial,sans-serif;font-size:clamp(34px,3.4vw,58px);font-weight:650;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.outcome-grid span{display:block;margin-top:12px;font-size:var(--body-sm);line-height:1.6;color:var(--muted)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,22px)}
+.tcard{margin:0;display:flex;flex-direction:column;gap:22px;padding:clamp(24px,2.2vw,36px);background:#fff;border:1px solid var(--line);border-radius:var(--r-card) 0 var(--r-card) var(--r-card)}
+.tcard blockquote{margin:0;font-size:var(--body);line-height:1.7;color:var(--ink)}
+.tcard figcaption{display:flex;align-items:center;gap:14px;margin-top:auto}
+.tavatar{display:grid;place-items:center;width:46px;height:46px;flex-shrink:0;border-radius:50%;background:var(--pale);color:var(--blue);font-weight:700}
+.tname{display:flex;flex-direction:column;font-size:14px;font-weight:650;color:var(--ink)}
+.tname em{font-style:normal;font-weight:500;font-size:13px;color:var(--muted)}
+.principal-card{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,3.4vw,64px);align-items:center;padding:clamp(24px,2.6vw,44px);background:var(--pale);border-radius:24px 0 24px 24px}
+.principal-photo{display:grid;place-items:center;aspect-ratio:4/5;border-radius:var(--r-card);background:#fff;padding:24px}.principal-photo img{width:min(46%,150px);height:auto}
+.principal-copy h2{margin:0 0 18px}
+.principal-copy>p:not(.eyebrow):not(.principal-name){margin:0;max-width:52ch;font-size:var(--body);line-height:1.75;color:var(--muted)}
+.principal-name{display:flex;flex-direction:column;margin:22px 0 18px;font-size:15px;font-weight:650;color:var(--ink)}
+.principal-name em{font-style:normal;font-weight:500;font-size:13.5px;color:var(--muted)}
+@media(max-width:1000px){.journey-steps,.outcome-grid{grid-template-columns:repeat(2,1fr)}.tgrid{grid-template-columns:1fr}.principal-card{grid-template-columns:1fr}.principal-photo{max-width:320px;aspect-ratio:4/3}}
+@media(max-width:560px){.journey-steps,.outcome-grid{grid-template-columns:1fr}}
+/* ---------- mobile UI pass ---------- */
+.hero-strip .lbl-s{display:none}
+.hero-strip strong span{display:inline;font-size:inherit;font-weight:inherit;color:inherit;margin:0;line-height:inherit}
+.mobile-cta{display:none}
+@media(max-width:800px){
+  /* readable body copy: nothing below 16px */
+  .value-card p,.quick-links p,.journey-steps p,.tcard blockquote,.outcome-grid span,
+  .section-heading>p,#about .about-intro p,.principal-copy>p:not(.eyebrow):not(.principal-name),
+  .cta-copy p:last-child,.faq details p,.vision-copy p,.hero .intro{font-size:16px;line-height:1.7}
+  .text-link,.quick-links em,.tname,.principal-name{font-size:15px}
+  /* comfortable tap targets */
+  nav>a{padding:12px 8px;min-height:44px;display:flex;align-items:center}
+  .menu{min-height:44px;padding:10px 14px}
+  .footer-col a{padding:10px 0;min-height:44px;display:flex;align-items:center}
+  .text-link{display:inline-flex;align-items:center;min-height:44px}
+  .faq summary{min-height:56px}
+  /* hero strip: short labels, readable sizes, still one line */
+  .hero-strip .lbl-l{display:none}.hero-strip .lbl-s{display:inline}
+  .hero-strip span{font-size:min(11.5px,3.4cqi)}
+  .hero-strip strong{font-size:min(17px,5cqi)}
+  .hero-strip>div+div{margin-left:min(22px,5.6cqi)}
+  .pill-badge{font-size:11px}
+  /* tighter rhythm so the page is less of a scroll */
+  .section{padding-top:clamp(48px,9vw,64px);padding-bottom:clamp(48px,9vw,64px)}
+  .value-card{min-height:0;gap:28px;padding:26px 24px}
+  .quick-links a{padding:22px 20px;gap:10px}
+  .outcome-grid{grid-template-columns:1fr 1fr;gap:22px 18px}
+  .outcome-grid li{padding:20px 12px 0 0}
+  /* testimonials swipe instead of a tall stack */
+  .tgrid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    margin-inline:calc(max(5.5vw,24px)*-1);padding-inline:max(5.5vw,24px);
+    padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tgrid::-webkit-scrollbar{display:none}
+  .tcard{flex:0 0 82%;scroll-snap-align:start}
+  /* sticky quick actions, above the safe area */
+  .mobile-cta{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:20;
+    padding:10px max(5.5vw,24px) calc(10px + env(safe-area-inset-bottom,0px));
+    background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mcta{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;
+    border-radius:14px;font-size:15px;font-weight:650;white-space:nowrap}
+  .mcta-primary{background:var(--blue);color:#fff}
+  .mcta-ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+  body{padding-bottom:76px}
+  footer{padding-bottom:40px}
+}
+@media(max-width:800px){
+  /* quick links: icon beside the title instead of stacked, saves a lot of height */
+  .quick-links a{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:6px;align-items:center}
+  .quick-links .qlink-icon{grid-column:1;grid-row:1/span 2;align-self:start}
+  .quick-links span{grid-column:2;align-self:end}
+  .quick-links h3{grid-column:2;margin-top:0}
+  .quick-links p,.quick-links em{grid-column:1/-1}
+  .quick-links em{padding-top:2px}
+  /* footer legibility */
+  .footer-col a,.footer-col address,.footer-brand p{font-size:15.5px}
+  .footer-bottom{font-size:12px}
+}

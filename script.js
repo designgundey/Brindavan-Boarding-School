@@ -106,6 +106,7 @@ if (prospectusModal) {
     const name = form.elements.name.value.trim();
     const whatsapp = form.elements.whatsapp.value.trim();
     const message = `Hi, I would like to request the school prospectus.\nName: ${name}\nMy WhatsApp number: ${whatsapp}`;
+    // TODO(contact): placeholder. Replace 910000000000 with the school's real WhatsApp number.
     const url = `https://wa.me/910000000000?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener');
     form.reset();
